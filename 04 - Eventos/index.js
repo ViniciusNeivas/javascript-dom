@@ -32,3 +32,17 @@ btn2.addEventListener("click",() => {
     clicouEmMim();
     btn1.removeEventListener('click',teste)
 })
+
+let p = document.getElementById('pararagrafo-da-propagacao')
+function msg (event){
+    event.stopPropagation()
+    console.log('clique no botão da propagacao');
+}
+let quartoBtn = document.createElement('button')
+quartoBtn.addEventListener('click', msg)
+quartoBtn.innerText = "Botão da propagação"
+p.appendChild(quartoBtn)
+
+p.addEventListener('click',() => {
+    console.log("clicaram no paragrafo")
+})
